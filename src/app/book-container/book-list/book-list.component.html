@@ -1,0 +1,22 @@
+
+<section>
+    <h2>My Books</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Book</th>
+                <th>Gender</th>
+                <th>Description</th>
+                <th>Lent to</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor=" let book of books ">
+                <td>{{ book.name }}</td>
+                <td>{{ book.gender.name }}</td>
+                <td>{{ book.description }}</td>
+                <td>{{ book.lentTo.nickName }}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

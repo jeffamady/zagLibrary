@@ -1,0 +1,20 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.display01 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 2rem;
+    margin: 2rem 0 1rem 0;
+}
+section {
+    background-color: rgb(247, 170, 77);
+    width: 45vw;
+    height: 85vh;
+    border: solid #F72585 0.2rem;
+    border-radius: 5%;
+}

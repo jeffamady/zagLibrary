@@ -1,0 +1,23 @@
+<section>
+    <h2>Persons List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Nickname</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor=" let person of persons">
+                <td>{{ persons.firstName }}</td>
+                <td>{{ persons.lastName }}</td>
+                <td>{{ persons.nickName }}</td>
+                <td>{{ persons.email }}</td>
+                <td>{{ persons.phone }}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

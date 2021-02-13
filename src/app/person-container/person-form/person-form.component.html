@@ -1,0 +1,34 @@
+<section>
+    <h2>New Person</h2>
+    <form class="input-group input-group-sm mb-3 genderForm" (ngSubmit)="savePerson()">
+        <div class="display01">
+            <span class="input-group-text" id="inputGroup-sizing-sm">First Name</span>
+            <input type="text" class="form-control" placeholder="Ingresa el Nombre" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="firstName" name="firstName" [(ngModel)]="person.firstName">
+        </div>
+
+        <div class="display01">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Last Name</span>
+            <input type="text" class="form-control" placeholder="Ingresa el Apellido" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="lastName" name="lastName" [(ngModel)]="person.lastName">
+        </div>
+
+        <div class="display01">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Nick Name</span>
+            <input type="text" class="form-control" placeholder="Ingresa el Apodo" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="nickName" name="nickName" [(ngModel)]="person.nickName">
+        </div>
+
+        <div class="display01">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Email</span>
+            <input type="email" class="form-control" placeholder="example@email.com" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="email" name="email" [(ngModel)]="person.email">
+        </div>
+
+        <div class="display01">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Phone</span>
+            <input type="text" class="form-control" placeholder="1122334455" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" id="phone" name="phone" [(ngModel)]="person.phone">
+        </div>
+        
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-primary" type="submit">Add New Person</button>
+        </div>
+    </form>
+
+</section>

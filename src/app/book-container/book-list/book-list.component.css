@@ -1,0 +1,29 @@
+section {
+    background-color: bisque;
+    width: 45vw;
+    height: 85vh;
+    border: solid #F72585 0.2rem;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+table {
+    width: 95%;
+}
+
+th, td{
+    width: 3rem;
+    text-align: center;
+}
+
+th {
+    background-color: coral;
+}
+
+td{
+    background-color: rgb(85, 82, 78);
+    color: whitesmoke;
+}
