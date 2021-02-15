@@ -7,8 +7,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Comedy</td>
+            <tr *ngFor="let gender of genders">
+                <td>{{ gender.name }}</td>
             </tr>
         </tbody>
     </table>

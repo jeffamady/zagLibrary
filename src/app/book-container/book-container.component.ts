@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BookService } from '../services/book.service';
+import { GenderService } from '../services/gender.service';
+import { PersonService } from '../services/person.service';
 
 @Component({
   selector: 'app-book-container',
@@ -7,72 +10,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookContainerComponent implements OnInit {
   // @Input() books: any= [ ];
+  books: any = [];
+  persons: any= [];
+  genders: any= [];
 
-  books =[
-    {
-      _id: "iejf98",
-      name: " La vi bel",
-      description: "sak pwal gen la",
-      gender: "lolo",
-      lentTo: "lala"
-
-    },
-    {
-      _id: "289d",
-      name: " La vi  2",
-      description: "sak pwal gen la 22jjkjz",
-      gender: "lili",
-      lentTo: "lele"
-
-    }
-  ];
-
-  genders = [
-    {
-      _id: "lolo",
-      name: "terror"
-    },
-    {
-      _id: "lili",
-      name: "fantasy"
-    }
-  ];
-  persons =[
-    {
-      _id: "lala",
-      firstName: "jrfr",
-      lastName: "isjfdn",
-      nickName: "Degouden",
-      email: "kjkn22@jmkf.vom",
-      phone: 2193940
-    },
-    {
-      _id: "lele",
-      firstName: "jrfr",
-      lastName: "isdfgjfdn",
-      nickName: "Zagree",
-      email: "kjkn22@jmkf.vom",
-      phone: 2193940
-    }
-   
-  ];
 
   libros:any;
-  constructor() { }
+  constructor(private bookService: BookService, private genderService: GenderService, private personService: PersonService) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+
+    this.books = await this.bookService.bookListFn();
+    this.genders = await this.genderService.genderListFn();
+    this.persons = await this.personService.personListFn();
 
     // add gender.name & person.nickName to the books
-    this.libros = this.books.map( (book)=> {
+    this.libros =  this.books.map( (book)=> {
       // found 
-      const gender1 = this.genders.find( (item) => {
+      const gender1 =  this.genders.find( (item) => {
         return item._id == book.gender;
       });
 
      
 
 
-      const person1 = this.persons.find( (element) => {
+      const person1 =  this.persons.find( (element) => {
         return element._id == book.lentTo;
       });
       console.log('gender' + gender1);

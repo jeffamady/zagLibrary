@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PersonService } from '../services/person.service';
+
 
 @Component({
   selector: 'app-person-container',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./person-container.component.css']
 })
 export class PersonContainerComponent implements OnInit {
+  persons: any = [];
+  constructor(private PersonService: PersonService ) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.persons = await this.PersonService.personListFn();
   }
 
 }

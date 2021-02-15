@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-person-list',
@@ -6,8 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./person-list.component.css']
 })
 export class PersonListComponent implements OnInit {
+  person = {
+    firstName:'',
+    lastName: '',
+    nickName:'',
+    email:'',
+    phone:''
+  }
 
-  persons: any=[];
+  @Input() persons =[];
   constructor() { }
 
   ngOnInit(): void {

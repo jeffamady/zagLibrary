@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GenderService } from '../services/gender.service';
+
 
 @Component({
   selector: 'app-gender-container',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gender-container.component.css']
 })
 export class GenderContainerComponent implements OnInit {
+  genders: any = [];
+  constructor(private genderService: GenderService) { }
 
-  constructor() { }
+  async ngOnInit() {
 
-  ngOnInit(): void {
+    this.genders= await this.genderService.genderListFn();
+
   }
 
 }
