@@ -19,4 +19,21 @@ export class GenderService {
       return [ ];
     }
   }
+
+  async addGenreService(newGenre) {
+    try {
+      const pocket = {
+        name: newGenre.name
+      }
+
+      const response = await this.http.post(this.url+"/gender", pocket).toPromise();
+
+      return response;
+
+    }
+    catch(e) {
+      console.log(e);
+      return [];
+    }
+  }
 }

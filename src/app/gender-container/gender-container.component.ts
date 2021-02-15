@@ -9,12 +9,18 @@ import { GenderService } from '../services/gender.service';
 })
 export class GenderContainerComponent implements OnInit {
   genders: any = [];
+
   constructor(private genderService: GenderService) { }
 
   async ngOnInit() {
 
     this.genders= await this.genderService.genderListFn();
 
+  }
+
+  async addGenre(newGenre) {
+    const response = await this.genderService.addGenreService(newGenre);
+    return response;
   }
 
 }

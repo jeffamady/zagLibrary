@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-gender-form',
@@ -9,17 +9,16 @@ export class GenderFormComponent implements OnInit {
 
 
   name = '';
+  @Output() newGenre: any = new EventEmitter();
 
-  saveGender() {
-    alert("I'm going to save a gender: " + this.name);
-  }
-    
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {}
 
-
-
+  saveGender() {
+    this.newGenre.emit(this.name);
   }
+
 
 }
