@@ -31,6 +31,7 @@ export class BookService {
         lentTo: newBook.lentTo
       }
       const response = await this.http.post(this.url+"/book", pocket).toPromise();
+      return response;
     }
     catch(e){
       console.log(e);
