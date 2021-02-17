@@ -9,10 +9,15 @@ import { PersonService } from '../services/person.service';
 })
 export class PersonContainerComponent implements OnInit {
   persons: any = [];
-  constructor(private PersonService: PersonService ) { }
+  constructor(private personService: PersonService ) { }
 
   async ngOnInit() {
-    this.persons = await this.PersonService.personListFn();
+    this.persons = await this.personService.personListFn();
+  }
+
+  async addPerson(newPerson) {
+    const response = await this.personService.addPersonService(newPerson);
+    return response;
   }
 
 }

@@ -19,4 +19,22 @@ export class PersonService {
       return [ ];
     }
   }
+
+  async addPersonService(newPerson){
+    try{
+      const pocket={
+        firstName: newPerson.firstName,
+        lastName: newPerson.lastName,
+        nickName: newPerson.nickName,
+        email: newPerson.email,
+        phone: newPerson.phone
+      }
+      const response = await this.http.post(this.url+"/person",pocket).toPromise();
+      return response;
+    }
+    catch(e){
+      console.log(e);
+      return [ ];
+    }
+  }
 }

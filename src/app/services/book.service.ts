@@ -20,4 +20,21 @@ export class BookService {
       return [ ]
     }
   }
+
+
+  async addBookService(newBook) {
+    try{
+      const pocket={
+        name: newBook.name,
+        gender: newBook.gender,
+        description: newBook.description,
+        lentTo: newBook.lentTo
+      }
+      const response = await this.http.post(this.url+"/book", pocket).toPromise();
+    }
+    catch(e){
+      console.log(e);
+      return [ ];
+    }
+  }
 }

@@ -52,7 +52,10 @@ export class BookContainerComponent implements OnInit {
     });
   }
 
+  async addBook(newBook) {
+    const response = await this.bookService.addBookService(newBook);
+    return response;
+  }
 
-  // suma= suma+ 10:
 
 }

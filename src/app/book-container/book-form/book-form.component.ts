@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 
 @Component({
   selector: 'app-book-form',
@@ -9,21 +9,21 @@ export class BookFormComponent implements OnInit {
  @Input() genders = [ ];
  @Input() persons = [ ];
 
+  @Output() newBook: any = new EventEmitter;
+  name ='';
+  gender = '';
+  description = '';
+  lentTo = '';
+  
 
   
-  book = {
-    name:'',
-    gender: '',
-    description:'',
-    lentTo: ''
-  } 
-
-  saveBook () {
-    alert('I gonna save a book' + this.book.name + this.book.gender + this.book.description + this.book.lentTo);
-  }
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  saveBook () {
+    this.newBook.emit(this.name, this.gender, this.description, this.lentTo);
   }
 
 }

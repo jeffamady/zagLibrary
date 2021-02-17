@@ -1,4 +1,4 @@
 <div>
-    <app-person-form ></app-person-form>
-    <app-person-list ></app-person-list>
+    <app-person-form (newPerson)="addPerson($event)"></app-person-form>
+    <app-person-list [persons]="persons"></app-person-list>
 </div>

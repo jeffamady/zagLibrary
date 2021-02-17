@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-person-form',
@@ -7,20 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonFormComponent implements OnInit {
 
-person = {
-  firstName:'',
-  lastName: '',
-  nickName:'',
-  email:'',
-  phone:''
-}
+  firstName='';
+  lastName ='';
+  nickName='';
+  email='';
+  phone='';
+  @Output() newPerson: any = new EventEmitter;
 
-  savePerson() {
-    alert( " You added a new person " + this.person.firstName + this.person.lastName + this.person.nickName + this.person.email + this.person.phone)
-  }
+
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  savePerson() {
+    this.newPerson.emit(this.firstName, this.lastName, this.nickName, this.email, this.phone);
   }
 
 }
