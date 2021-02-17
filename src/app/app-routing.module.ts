@@ -5,7 +5,7 @@ import { PersonContainerComponent } from './person-container/person-container.co
 import { BookContainerComponent } from './book-container/book-container.component';
 
 const routes: Routes = [
-  {path: 'genders', component: GenderContainerComponent},
+  {path: 'genres', component: GenderContainerComponent},
   {path: 'persons', component: PersonContainerComponent},
   {path: 'books', component: BookContainerComponent}
 

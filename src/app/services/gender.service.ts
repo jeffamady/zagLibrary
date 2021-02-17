@@ -5,14 +5,14 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class GenderService {
-  url = "jnalibrary.herokuapp.com"
+  url = "https://jnalibrary.herokuapp.com"
   constructor(private http: HttpClient) { }
 
   async genderListFn() {
     try {
-      const response = await this.http.get(this.url+"/gender").toPromise();
+      const answer = await this.http.get(this.url+"/gender").toPromise();
 
-      return response
+      return answer;
     }
     catch(e) {
       console.log(e);
@@ -22,13 +22,13 @@ export class GenderService {
 
   async addGenreService(newGenre) {
     try {
-      const pocket = {
+      const body = {
         name: newGenre.name
       }
 
-      const response = await this.http.post(this.url+"/gender", pocket).toPromise();
+      const answer = await this.http.post(this.url+"/gender", body).toPromise();
 
-      return response;
+      return answer;
 
     }
     catch(e) {

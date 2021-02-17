@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class BookService {
-  url = "jnalibrary.herokuapp.com";
+  url = "https://jnalibrary.herokuapp.com";
   constructor(private http: HttpClient) { }
 
 

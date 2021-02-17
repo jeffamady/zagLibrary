@@ -8,13 +8,25 @@ import { GenderService } from '../services/gender.service';
   styleUrls: ['./gender-container.component.css']
 })
 export class GenderContainerComponent implements OnInit {
-  genders: any = [];
+  // genders: any = [];
+  genders = [
+    {
+      name:"Louis"
+    },
+    {
+      name:"Jean"
+    },
+    {
+      name: "Jacques"
+    }
+  ];
+
 
   constructor(private genderService: GenderService) { }
 
   async ngOnInit() {
 
-    this.genders= await this.genderService.genderListFn();
+    // this.genders= await this.genderService.genderListFn();
 
   }
 
